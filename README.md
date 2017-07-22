@@ -13,4 +13,6 @@ They give different colors!
 # HOW TO
 `$ vibrant.py [-a] IMAGE`
 
+The output will be an RGB hexcode, such as #48AB4C.
+
 The default is the 'palette' algorithm. The -a switch toggles the 'all' method.
