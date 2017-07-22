@@ -17,7 +17,7 @@ class Pixel():
         self.color = Color(color, **kwargs)
         self.population = population
     def __repr__(self):
-        return self.color.hex
+        return self.color.hex_l
     def vibrance(self):
         return MIN_SAT <= self.color.saturation and MIN_LUM <= self.color.luminance <= MAX_LUM and \
                self.population * WEIGHT_POP + self.color.saturation * WEIGHT_SAT + \
