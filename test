@@ -9,8 +9,8 @@ do
 	echo "$image"
 	echo -n 'Palette: '
 	./vibrant.py "$image" | hex2col
-	echo -n 'All:     '
-	./vibrant.py -a "$image" | hex2col
+	#echo -n 'All:     '
+	#./vibrant.py -a "$image" | hex2col
         xdotool key q
 	echo
 done
