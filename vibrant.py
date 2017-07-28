@@ -8,7 +8,7 @@ from colour import Color
 MIN_LUM = 0.3
 MAX_LUM = 0.7
 MIN_SAT = 0.4
-TARGET_LUM = 0.5
+#TARGET_LUM = 0.5
 WEIGHT_SAT = 3.0
 WEIGHT_LUM = 6.0
 WEIGHT_POP = 1.0
@@ -24,7 +24,7 @@ class Pixel():
     def vibrance(self):
         return MIN_SAT <= self.color.saturation and MIN_LUM <= self.color.luminance <= MAX_LUM and \
                self.population * WEIGHT_POP + self.color.saturation * WEIGHT_SAT + \
-               (1 - abs(self.color.luminance - TARGET_LUM))  * WEIGHT_LUM
+               (1 - abs(2 * self.color.luminance - 1))  * WEIGHT_LUM
 
 def usage():
     print('USAGE:', __file__ + ' [-a] IMAGE')
