@@ -3,12 +3,14 @@
 from sys import argv, exit
 from colour import Color
 
-MINLUM = 0.3
-MAXLUM = 0.7
-MINSAT = 0.5
-WEIGHTSAT = 4.0
-WEIGHTLUM = 6.0
-WEIGHTPOP = 0.5
+# These defaults should give you good results, but adjust them if you don't get the colors you desire.
+
+MINLUM = 0.3 # All colors falling below this luminosity have vibrance = 0 
+MAXLUM = 0.7 # All colors above this luminosity have vibrance = 0
+MINSAT = 0.5 # All colors falling below this saturation have vibrance = 0
+WEIGHTSAT = 4.0 # How much to take saturation into account.
+WEIGHTLUM = 6.0 # How much to take luminosity into account.
+WEIGHTPOP = 0.5 # How much to take the population (times a color appears) into account.
 
 # Used to determine the most vibrant color.
 class Pixel():
