@@ -4,7 +4,6 @@ from sys import argv, exit
 from colour import Color
 
 # These defaults should give you good results, but adjust them if you don't get the colors you desire.
-
 MINLUM = 0.3 # All colors falling below this luminosity have vibrance = 0 
 MAXLUM = 0.7 # All colors above this luminosity have vibrance = 0
 MINSAT = 0.5 # All colors falling below this saturation have vibrance = 0
