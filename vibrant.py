@@ -6,12 +6,12 @@ from PIL import Image
 from colour import Color
 
 MIN_LUM = 0.3
-MAX_LUM = 0.7
-MIN_SAT = 0.4
+MAX_LUM = 0.6
+MIN_SAT = 0.5
 #TARGET_LUM = 0.5
-WEIGHT_SAT = 3.0
+WEIGHT_SAT = 4.0
 WEIGHT_LUM = 6.0
-WEIGHT_POP = 1.0
+WEIGHT_POP = 0.5
 PALETTE_QUALITY = 32 # from 1 to inf. Higher is worse.
 PALETTE_COLOR_COUNT = 16 # from 1 to inf.
 
@@ -47,8 +47,8 @@ def get_allcolors(filename):
 def mostvibrant(colorlist):
     return max(colorlist, key=lambda c: c.vibrance())
 
-def mostvibrant_palette(filename, quality, color_count):
-    return mostvibrant(get_palette(filename, quality, color_count))
+def mostvibrant_palette(filename)):
+    return mostvibrant(get_palette(filename, PALETTE_QUALITY, PALETTE_COLOR_COUNT))
 
 def mostvibrant_allcolors(filename):
     return mostvibrant(get_allcolors(filename))
@@ -60,7 +60,7 @@ def main():
         argv.remove('-a')
         print(mostvibrant_allcolors(argv[1]))
     else:
-        print(mostvibrant_palette(argv[1], PALETTE_QUALITY, PALETTE_COLOR_COUNT))
+        print(mostvibrant_palette(argv[1]))
 
 if __name__ == '__main__':
     main()
